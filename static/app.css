@@ -1,0 +1,5 @@
+.pet-profile {
+    height: 200px;  /* or whatever height you want */
+    width: auto;
+    object-fit: cover;  /* this will maintain the aspect ratio */
+}

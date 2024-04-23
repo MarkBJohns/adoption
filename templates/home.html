@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block title %}Mark's Pet Adoption Agency{% endblock %} 
+
+{% block content %}
+
+<h1>Welcome</h1>
+
+<a href="/add">
+    <button class="btn btn-success">Add a Pet!</button>
+</a>
+
+{% for pet in pets %}
+<div>
+    <h2> <a href="/pet/{{pet.id}}">{{pet.name}}</a></h2>
+    <img class="pet-profile" src="{{pet.photo_url}}" alt="{{pet.name}}, a {{pet.species}}">
+    
+    {% if pet.available == True %}
+    <p>{{pet.name}} is <b>available</b>!</p>
+    {% else %}
+    <p>{{pet.name}} is not available to be adopted.</p>
+    {% endif %}
+    
+</div>
+{% endfor %}
+
+{% endblock %}
